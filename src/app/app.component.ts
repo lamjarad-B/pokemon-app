@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { POKEMONS } from './mock-pokemon-list'; // Import de la liste de Pokémons mockée
 import { Pokemon } from './pokemon'; // Import du modèle de données d'un Pokémon
 
+import { BorderCardDirective } from './border-card.directive'; // Import de la directive
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, BorderCardDirective],
   templateUrl: 'app.component.html' // pas besoin d'un chemin relatif puisque les deux fichiers se trouvent dans le même dossier
 })
 export class AppComponent implements OnInit{
