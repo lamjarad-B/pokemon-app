@@ -1,3 +1,4 @@
+import { PokemonModule } from './../pokemon.module';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
@@ -11,7 +12,7 @@ import { BorderCardDirective } from '../border-card.directive';
 @Component({
   selector: 'app-detail-pokemon',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, PokemonTypeColorPipe, BorderCardDirective],
+  imports: [CommonModule, RouterOutlet, PokemonTypeColorPipe, BorderCardDirective, PokemonModule],
   templateUrl: './detail-pokemon.component.html'
 })
 export class DetailPokemonComponent {

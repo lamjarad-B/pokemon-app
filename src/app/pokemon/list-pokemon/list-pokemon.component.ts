@@ -1,3 +1,4 @@
+import { PokemonModule } from './../pokemon.module';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { Router, RouterOutlet } from '@angular/router';
@@ -9,7 +10,7 @@ import { BorderCardDirective } from '../border-card.directive';
 @Component({
   selector: 'app-list-pokemon',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, PokemonTypeColorPipe, BorderCardDirective],
+  imports: [CommonModule, RouterOutlet, PokemonModule, PokemonTypeColorPipe, BorderCardDirective],
   templateUrl: './list-pokemon.component.html'
 })
 export class ListPokemonComponent {
