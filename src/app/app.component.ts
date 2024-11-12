@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
-import { POKEMONS } from './mock-pokemon-list'; // Import de la liste de Pokémons mockée
-import { Pokemon } from './pokemon'; // Import du modèle de données d'un Pokémon
+// import { POKEMONS } from './mock-pokemon-list'; // Import de la liste de Pokémons mockée
+// import { Pokemon } from './pokemon'; // Import du modèle de données d'un Pokémon
 
 import { BorderCardDirective } from './border-card.directive'; // Import de la directive
 import{ PokemonTypeColorPipe } from './pokemon-type-color.pipe'; // Import de la pipe
@@ -16,26 +16,26 @@ import{ PokemonTypeColorPipe } from './pokemon-type-color.pipe'; // Import de la
 export class AppComponent implements OnInit{
   // Déclaration et initialisation de la liste des Pokémons depuis la liste mockée
   // pokemonList est un tableau de Pokemon
-  pokemonList:Pokemon[] = POKEMONS;
-  pokemonSelected: Pokemon|undefined;
+  // pokemonList:Pokemon[] = POKEMONS;
+  // pokemonSelected: Pokemon|undefined;
   
   ngOnInit(): void {
-      console.table(this.pokemonList);// this pour dire la proprièté pokemonList de cet objet
+      //console.table(this.pokemonList);// this pour dire la proprièté pokemonList de cet objet
 
       //this.selectPokemon(this.pokemonList[3]);
   }
 
-  selectPokemon(pokemonId: string){
-    const pokemon: Pokemon|undefined = this.pokemonList.find(pokemon => pokemon.id == +pokemonId)
-    if(pokemon){
-      console.log(`Vous avez demandé le pokemon ${pokemon.name}`);
-      this.pokemonSelected = pokemon;
-    } else{
-      console.log(`Vous avez demandé un pokémon qui n'existe pas`);
-      this.pokemonSelected = pokemon;
-    }
+  // selectPokemon(pokemonId: string){
+  //   const pokemon: Pokemon|undefined = this.pokemonList.find(pokemon => pokemon.id == +pokemonId)
+  //   if(pokemon){
+  //     console.log(`Vous avez demandé le pokemon ${pokemon.name}`);
+  //     this.pokemonSelected = pokemon;
+  //   } else{
+  //     console.log(`Vous avez demandé un pokémon qui n'existe pas`);
+  //     this.pokemonSelected = pokemon;
+  //   }
     
-  }
+  // }
 
 
 
