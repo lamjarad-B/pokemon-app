@@ -18,7 +18,7 @@ export class DetailPokemonComponent {
   pokemon: Pokemon|undefined; // Pour  stocker le pokemon courant
 
   // On injecte ActivatedRoute dans le constructeur afin de récupérer la route activée dès l'appelle de ce composant
-  constructor(private route: ActivatedRoute, private router: Router, private PokemonService: PokemonService){}
+  constructor(private route: ActivatedRoute, private router: Router, private pokemonService: PokemonService){}
 
   ngOnInit(){
     //this.pokemonList = POKEMONS;
@@ -28,7 +28,7 @@ export class DetailPokemonComponent {
 
     if(pokemonId){
      //this.pokemon = this.pokemonList.find(pokemon => pokemon.id == +pokemonId)
-     this.pokemon = this.PokemonService.getPokemonById(+pokemonId);
+     this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
     }
     //const pokemonId = +this.route.snapshot.params['id'];
 
@@ -36,5 +36,9 @@ export class DetailPokemonComponent {
 
   goToPokemonList(){
     this.router.navigate(['/pokemons']);
+  }
+
+  goToEditPokemon(pokemon: Pokemon){
+    this.router.navigate(['/edit/pokemon', pokemon.id]);
   }
 }
