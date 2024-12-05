@@ -2,16 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms';
-// import { POKEMONS } from './mock-pokemon-list'; // Import de la liste de Pokémons mockée
-// import { Pokemon } from './pokemon'; // Import du modèle de données d'un Pokémon
-
-//import { BorderCardDirective } from './pokemon/border-card.directive'; // Import de la directive
-//import{ PokemonTypeColorPipe } from './pokemon/pokemon-type-color.pipe'; // Import de la pipe
+import { HttpClient } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule],
+  imports: [RouterOutlet, CommonModule, HttpClientInMemoryWebApiModule, FormsModule],
   templateUrl: 'app.component.html' // pas besoin d'un chemin relatif puisque les deux fichiers se trouvent dans le même dossier
 })
 export class AppComponent implements OnInit{

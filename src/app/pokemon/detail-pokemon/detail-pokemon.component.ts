@@ -27,8 +27,8 @@ export class DetailPokemonComponent {
     const pokemonId: string|null = this.route.snapshot.paramMap.get('id');
 
     if(pokemonId){
-     //this.pokemon = this.pokemonList.find(pokemon => pokemon.id == +pokemonId)
-     this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
+     this.pokemonService.getPokemonById(+pokemonId)
+      .subscribe(pokemon => this.pokemon = pokemon);
     }
     //const pokemonId = +this.route.snapshot.params['id'];
 
